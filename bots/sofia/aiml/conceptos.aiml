@@ -137,6 +137,37 @@
         </template>
     </category>
     <category>
+        <pattern>CONSULTARPROMOCIONES</pattern>
+        <template>
+            {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Enviá un SMS al 611 para consultar por promociones y beneficios actuales. También hacelo por Mi Cuenta Web, por *611# + SEND o a través de nuestras redes sociales de Twitter, Facebook o Google+.",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"https://twitter.com/movistararg",
+                    "title":"Twitter"
+                    },
+                     {
+                    "type":"web_url",
+                    "url":"https://www.facebook.com/comunidadmovistarargentina",
+                    "title":"Facebook"
+                    },
+                     {
+                    "type":"web_url",
+                    "url":"https://plus.google.com/+MovistarArgentina/posts",
+                    "title":"Google +"
+                    }
+                ]
+              }
+            }
+            }
+        </template>
+    </category>
+    <category>
         <pattern>PAGAR</pattern>
         <template>
             {
@@ -150,6 +181,30 @@
                     "type":"web_url",
                     "url":"http://ayuda.movistar.com.ar/pregunta/donde-pago-mi-factura.html",
                     "title":"¿Dónde pago mi factura?"
+                    }
+                ]
+              }
+            }
+            }
+        </template>
+    </category>
+    <category>
+        <pattern>FALLACELULAR</pattern>
+        <template>
+            {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Si tu celular movistar tiene una rotura o falla, acercate a un servicio técnico. Tené en cuenta que: 
+                    - Garantía de fábrica: solo cubre reparación de software no de hardware. Es decir, no cubre roturas sino fallas del programa.
+                    - Seguro Movistar: cubre 100% cualquier reparación.
+                    - Seguro Assurant: cubre 50% destrucción total (eso lo determina el servicio técnico) y 100% reparaciones (eso lo determina el servicio técnico).",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"http://movi.st/hc9",
+                    "title":"Servicio Tecnico"
                     }
                 ]
               }
