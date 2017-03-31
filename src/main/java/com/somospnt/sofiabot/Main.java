@@ -6,7 +6,6 @@ import com.somospnt.sofiabot.ab.Chat;
 import com.somospnt.sofiabot.ab.MagicBooleans;
 import com.somospnt.sofiabot.ab.MagicStrings;
 import com.somospnt.sofiabot.ab.PCAIMLProcessorExtension;
-import com.somospnt.sofiabot.ab.utils.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -29,6 +27,7 @@ public class Main {
         SpringApplication.run(Main.class, args);
 
         MagicStrings.root_path = System.getProperty("user.dir");
+       
         log.info("Working Directory = " + MagicStrings.root_path);
         AIMLProcessor.extension = new PCAIMLProcessorExtension();
         inicializarBot(args);
@@ -39,7 +38,8 @@ public class Main {
         String action = "chat";
         log.info(MagicStrings.programNameVersion);
         log.info("trace mode = " + MagicBooleans.trace_mode);
-        bot = new Bot(nombreBot, MagicStrings.root_path, action); //
+        bot = new Bot(nombreBot, MagicStrings.root_path, "aiml2csv");
+        //
     }
 
     @GetMapping("/saludar")
@@ -67,7 +67,7 @@ public class Main {
 
         bot.brain.nodeStats();
 
-        log.debug("STATE=" + body + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
+        log.info("STATE=" + body + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
         String response = chatSession.multisentenceRespond(body);
         while (response.contains("&lt;")) {
             response = response.replace("&lt;", "<");
