@@ -13,7 +13,7 @@ if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
     process.exit(1);
 }
 
-modules.export = {
+module.exports = {
     APP_SECRET: APP_SECRET,
     VALIDATION_TOKEN: VALIDATION_TOKEN,
     PAGE_ACCESS_TOKEN: PAGE_ACCESS_TOKEN,
