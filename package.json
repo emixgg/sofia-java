@@ -1,12 +1,17 @@
 {
-  "name": "Sofia facebook",
+  "name": "messenger-get-started",
   "version": "1.0.0",
-  "description": "Integracion de bot Sofia (implementacion PNT) con Facebook",
+  "description": "Get started example for Messenger Platform",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
-    },
-  "author": "SomosPNT",
+    "start": "node app.js",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fbsamples/messenger-platform-samples.git"
+  },
+  "author": "Facebook",
+  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.0",
     "config": "^1.20.4",
