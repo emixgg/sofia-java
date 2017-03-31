@@ -1,3 +1,5 @@
+const request = require('request');
+
 function receivedAuthentication(event) {
     var senderID = event.sender.id;
     var recipientID = event.recipient.id;

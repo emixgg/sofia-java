@@ -1,5 +1,4 @@
 const config = require('config'),
-      request = require('request'),
       webhookService = require('../service/WebhookService');
 
 const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? process.env.MESSENGER_APP_SECRET : config.get('appSecret');
