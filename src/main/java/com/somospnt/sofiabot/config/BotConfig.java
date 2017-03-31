@@ -17,6 +17,7 @@ public class BotConfig {
 
     @Bean
     public Bot bot() {
+        MagicStrings.root_path = System.getProperty("user.dir");
         Bot bot = new Bot(nombreBot, MagicStrings.root_path, accion);
         return bot;
     }
