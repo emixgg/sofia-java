@@ -1,4 +1,4 @@
-package com.somospnt.sofiabot.ab.cli;
+package com.somospnt.sofiabot;
 
 import com.somospnt.sofiabot.ab.AIMLProcessor;
 import com.somospnt.sofiabot.ab.Bot;
