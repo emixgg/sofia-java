@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,32 +18,37 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 /**
  * Specialized timer function for program instrumentation
  */
 public class Timer {
+
     private long startTimeMillis;
 
-    public Timer () {
+    public Timer() {
         start();
     }
+
     public void start() {
-       startTimeMillis = System.currentTimeMillis();
+        startTimeMillis = System.currentTimeMillis();
     }
+
     public long elapsedTimeMillis() {
-        return System.currentTimeMillis()-startTimeMillis+1;
+        return System.currentTimeMillis() - startTimeMillis + 1;
     }
+
     public long elapsedRestartMs() {
-        long ms =  System.currentTimeMillis()-startTimeMillis+1;
+        long ms = System.currentTimeMillis() - startTimeMillis + 1;
         start();
         return ms;
     }
-    public float elapsedTimeSecs () {
-        return elapsedTimeMillis()/1000F;
+
+    public float elapsedTimeSecs() {
+        return elapsedTimeMillis() / 1000F;
     }
-    public float elapsedTimeMins () {
-        return elapsedTimeSecs()/60F;
+
+    public float elapsedTimeMins() {
+        return elapsedTimeSecs() / 60F;
     }
 }

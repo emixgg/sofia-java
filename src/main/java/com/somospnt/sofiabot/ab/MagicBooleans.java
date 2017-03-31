@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,12 +18,12 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 /**
  * Global boolean values that control various actions in Program AB
  */
 public class MagicBooleans {
+
     public static boolean trace_mode = true;
     public static boolean enable_external_sets = true;
     public static boolean enable_external_maps = true;

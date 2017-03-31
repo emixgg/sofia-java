@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,17 +18,18 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Nodemapper data structure.  In order to minimize memory overhead this class has no methods.
- * Operations on Nodemapper objects are performed by NodemapperOperator class
+ * Nodemapper data structure. In order to minimize memory overhead this class
+ * has no methods. Operations on Nodemapper objects are performed by
+ * NodemapperOperator class
  */
 public class Nodemapper {
-/*    public static int idCnt=0;
+
+    /*    public static int idCnt=0;
     public int id;*/
     public Category category = null;
     public int height = MagicNumbers.max_graph_height;
@@ -37,10 +39,8 @@ public class Nodemapper {
     public Nodemapper value = null;
     public boolean shortCut = false;
     public ArrayList<String> sets;
-/*    public Nodemapper () {
+    /*    public Nodemapper () {
         id = idCnt++;
     }*/
 
- }
-
-
+}

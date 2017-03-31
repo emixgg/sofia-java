@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,13 +18,13 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 /**
  * Integers with specific values in Program AB
  *
  */
 public class MagicNumbers {
+
     public static int node_activation_cnt = 4;
     public static int node_size = 4;
     public static int displayed_input_sample_size = 6;

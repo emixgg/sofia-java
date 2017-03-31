@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,8 +18,7 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 import org.w3c.dom.Node;
 
 import java.util.Set;
@@ -26,24 +26,25 @@ import java.util.Set;
 /**
  * The interface needed to implement AIML Extension
  *
- * A class implementing AIMLProcessorExtension should return
- * a Set of tag names and provide a function to recursively evaluate the
- * XML parse tree for each node associated with a new tag.
+ * A class implementing AIMLProcessorExtension should return a Set of tag names
+ * and provide a function to recursively evaluate the XML parse tree for each
+ * node associated with a new tag.
  */
 public interface AIMLProcessorExtension {
+
     /**
      * provide the AIMLProcessor with a list of extension tag names.
      *
-     * @return      Set of extension tag names
+     * @return Set of extension tag names
      */
-   public Set<String> extensionTagSet();
+    public Set<String> extensionTagSet();
 
     /**
      * recursively evaluate AIML from a node corresponding an extension tag
      *
-     * @param node                current XML parse node
-     * @param ps                  current parse state
-     * @return                    result of evaluating AIML
+     * @param node current XML parse node
+     * @param ps current parse state
+     * @return result of evaluating AIML
      */
-   public String recursEval(Node node, ParseState ps);
+    public String recursEval(Node node, ParseState ps);
 }
