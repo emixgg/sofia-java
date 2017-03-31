@@ -1,5 +1,6 @@
 const request = require('request'),
-        config = require('../config/facebookConfiguration');
+        config = require('../config/facebookConfiguration'),
+        webhookRepository = require('../repository/WebhookRepository');
 
 function receivedAuthentication(event) {
     var senderID = event.sender.id;
@@ -106,7 +107,8 @@ function receivedMessage(event) {
                 break;
 
             default:
-                sendTextMessage(senderID, messageText);
+                var respuesta = webhookRepository.charlar(messageText);
+                sendTextMessage(senderID, respuesta);
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
