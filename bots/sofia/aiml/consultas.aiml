@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <!--    <category>
+        <pattern>CONSULTAS</pattern>
+        <template>
+            {"text": "Las consultas más comunes de los usuarios son:
+            ¿Cuánto debo?
+            No funciona el teléfono
+            Quiero hablar con un operador
+            Quiero cambiar mi equipo
+            Quiero pagar
+            Quiero consultar sobre mi plan
+            ¿Dónde puedo consultar los conceptos facturados?
+            Quiero saber el estado de mi pedido
+            ¿Cómo cambio mi plan?
+            No me puedo registrar
+            ¿Cómo obtengo mi usuario y contraseña?
+            "}
+        </template>
+    </category>-->
+    <category>
+        <pattern>^ CONSULTAS ^</pattern>
+        <template>
+            <srai>CONSULTAS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ CUANTO DEBO ^</pattern>
+        <template>
+            {
+            "attachment": {
+            "type": "template",
+            "payload": {
+            "template_type": "button",
+            "text": "Si querés ver el detalle de tu deuda, podés hacerlo de las siguientes formas",
+            "buttons": [
+            {
+            "type": "web_url",
+            "url": "http://ayuda.movistar.com.ar/pregunta/como-genero-el-cupon-de-pago.html",
+            "title": "Generando el Cupo de pago"
+            },
+            {
+            "type": "web_url",
+            "url": "http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar",
+            "title": "Desde la App Mi Movistar"
+            },
+            {
+            "type": "web_url",
+            "url": "http://ayuda.movistar.com.ar/pregunta/cuanto-debo.html",
+            "title": "Desde la Web."
+            }
+            ]
+            }
+            }
+            }
+        </template>
+    </category>
+</aiml>
