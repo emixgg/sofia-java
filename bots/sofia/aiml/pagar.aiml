@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>^ PAGAR ^</pattern>
+        <template>
+            <srai>PAGAR</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ ABONAR ^</pattern>
+        <template>
+            <srai>PAGAR</srai>
+        </template>
+    </category>
+</aiml>
