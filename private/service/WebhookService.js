@@ -1,17 +1,5 @@
 const request = require('request'),
-        config = require('config');
-const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? process.env.MESSENGER_APP_SECRET : config.get('appSecret');
-
-const VALIDATION_TOKEN = (process.env.MESSENGER_VALIDATION_TOKEN) ? (process.env.MESSENGER_VALIDATION_TOKEN) : config.get('validationToken');
-
-const PAGE_ACCESS_TOKEN = (process.env.MESSENGER_PAGE_ACCESS_TOKEN) ? (process.env.MESSENGER_PAGE_ACCESS_TOKEN) : config.get('pageAccessToken');
-
-const SERVER_URL = (process.env.SERVER_URL) ? (process.env.SERVER_URL) : config.get('serverURL');
-
-if (!(APP_SECRET && VALIDATION_TOKEN && PAGE_ACCESS_TOKEN && SERVER_URL)) {
-    console.error("Missing config values");
-    process.exit(1);
-}
+        config = require('../config/facebookConfiguration');
 
 function receivedAuthentication(event) {
     var senderID = event.sender.id;
@@ -191,7 +179,7 @@ function sendImageMessage(recipientId) {
             attachment: {
                 type: "image",
                 payload: {
-                    url: SERVER_URL + "/assets/rift.png"
+                    url: config.config.SERVER_URL + "/assets/rift.png"
                 }
             }
         }
@@ -209,7 +197,7 @@ function sendGifMessage(recipientId) {
             attachment: {
                 type: "image",
                 payload: {
-                    url: SERVER_URL + "/assets/instagram_logo.gif"
+                    url: config.SERVER_URL + "/assets/instagram_logo.gif"
                 }
             }
         }
@@ -227,7 +215,7 @@ function sendAudioMessage(recipientId) {
             attachment: {
                 type: "audio",
                 payload: {
-                    url: SERVER_URL + "/assets/sample.mp3"
+                    url: config.SERVER_URL + "/assets/sample.mp3"
                 }
             }
         }
@@ -245,7 +233,7 @@ function sendVideoMessage(recipientId) {
             attachment: {
                 type: "video",
                 payload: {
-                    url: SERVER_URL + "/assets/allofus480.mov"
+                    url: config.SERVER_URL + "/assets/allofus480.mov"
                 }
             }
         }
@@ -263,7 +251,7 @@ function sendFileMessage(recipientId) {
             attachment: {
                 type: "file",
                 payload: {
-                    url: SERVER_URL + "/assets/test.txt"
+                    url: config.SERVER_URL + "/assets/test.txt"
                 }
             }
         }
@@ -331,7 +319,7 @@ function sendGenericMessage(recipientId) {
                             title: "rift",
                             subtitle: "Next-generation virtual reality",
                             item_url: "https://www.oculus.com/en-us/rift/",
-                            image_url: SERVER_URL + "/assets/rift.png",
+                            image_url: config.SERVER_URL + "/assets/rift.png",
                             buttons: [{
                                     type: "web_url",
                                     url: "https://www.oculus.com/en-us/rift/",
@@ -345,7 +333,7 @@ function sendGenericMessage(recipientId) {
                             title: "touch",
                             subtitle: "Your Hands, Now in VR",
                             item_url: "https://www.oculus.com/en-us/touch/",
-                            image_url: SERVER_URL + "/assets/touch.png",
+                            image_url: config.SERVER_URL + "/assets/touch.png",
                             buttons: [{
                                     type: "web_url",
                                     url: "https://www.oculus.com/en-us/touch/",
@@ -387,14 +375,14 @@ function sendReceiptMessage(recipientId) {
                             quantity: 1,
                             price: 599.00,
                             currency: "USD",
-                            image_url: SERVER_URL + "/assets/riftsq.png"
+                            image_url: config.SERVER_URL + "/assets/riftsq.png"
                         }, {
                             title: "Samsung Gear VR",
                             subtitle: "Frost White",
                             quantity: 1,
                             price: 99.99,
                             currency: "USD",
-                            image_url: SERVER_URL + "/assets/gearvrsq.png"
+                            image_url: config.SERVER_URL + "/assets/gearvrsq.png"
                         }],
                     address: {
                         street_1: "1 Hacker Way",
@@ -518,7 +506,7 @@ function sendAccountLinking(recipientId) {
                     text: "Welcome. Link your account.",
                     buttons: [{
                             type: "account_link",
-                            url: SERVER_URL + "/authorize"
+                            url: config.SERVER_URL + "/authorize"
                         }]
                 }
             }
@@ -536,7 +524,7 @@ function sendAccountLinking(recipientId) {
 function callSendAPI(messageData) {
     request({
         uri: 'https://graph.facebook.com/v2.6/me/messages',
-        qs: {access_token: PAGE_ACCESS_TOKEN},
+        qs: {access_token: config.PAGE_ACCESS_TOKEN},
         method: 'POST',
         json: messageData
 
