@@ -13,15 +13,19 @@ public class MensajeServiceImpl implements MensajeService {
 
     @Autowired
     private Bot bot;
-    private static final Logger log = LoggerFactory.getLogger(MensajeServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(MensajeServiceImpl.class);
 
     @Override
     public String responder(String mensaje) {
         Chat chatSession = new Chat(bot);
-
         bot.brain.nodeStats();
 
-        log.debug("STATE=" + mensaje + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
+        StringBuilder mensajed = new StringBuilder("STATE=")
+                .append(mensaje).append(":THAT=")
+                .append(chatSession.thatHistory.get(0).get(0))
+                .append(":TOPIC=").append(chatSession.predicates.get("topic"));
+
+        logger.debug(mensajed.toString());
         String response = chatSession.multisentenceRespond(mensaje);
         while (response.contains("&lt;")) {
             response = response.replace("&lt;", "<");
@@ -29,7 +33,7 @@ public class MensajeServiceImpl implements MensajeService {
         while (response.contains("&gt;")) {
             response = response.replace("&gt;", ">");
         }
-        log.info("Robot: " + response);
+        logger.info("Robot: " + response);
         return response;
     }
 
