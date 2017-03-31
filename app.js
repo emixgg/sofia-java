@@ -1,5 +1,7 @@
 'use strict';
 
+const winston = require('winston')
+
 const   bodyParser = require('body-parser'),
         crypto = require('crypto'),
         express = require('express'),
@@ -19,6 +21,8 @@ app.use(express.static('public'));
 app.use('/', webhookRouter);
 
 app.listen(app.get('port'), function () {
+    winston.log("info","GIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIL");
+    
     console.log('Node app is running on port', app.get('port'));
 });
 
