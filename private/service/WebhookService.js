@@ -107,8 +107,9 @@ function receivedMessage(event) {
                 break;
 
             default:
-                var respuesta = webhookRepository.charlar(messageText);
-                sendTextMessage(senderID, respuesta);
+                webhookRepository.charlar(messageText).then(function(respuesta) {
+                    sendTextMessage(senderID, respuesta);                  
+                });
         }
     } else if (messageAttachments) {
         sendTextMessage(senderID, "Message with attachment received");
