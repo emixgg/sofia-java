@@ -101,10 +101,7 @@
     <category>
         <pattern>*</pattern>
         <template>
-            Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación. 
-            ¿Pudiste ingresar a Mi Cuenta?
-            - Sí pude ingresar
-            - No pude <a src="http://www.google.com.ar">link</a>
+            Perdón, no entiendo lo que querés decir
         </template>
     </category>
 </aiml>

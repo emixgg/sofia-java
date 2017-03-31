@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>^ CAMBIO ^ <set>EQUIPO</set> ^</pattern>
+        <template>
+            <srai>CAMBIAREQUIPO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ CAMBIAR ^ <set>EQUIPO</set> ^</pattern>
+        <template>
+            <srai>CAMBIAREQUIPO</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ DAR DE ALTA ^ <set>EQUIPO</set> ^</pattern>
+        <template>
+            <srai>CAMBIAREQUIPO</srai>
+        </template>
+    </category>
+</aiml>
