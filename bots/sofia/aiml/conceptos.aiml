@@ -33,51 +33,78 @@
     <category>
         <pattern>DEBER</pattern>
         <template>
-            {   
-            "text": "¡Hola! Soy tu asistente virtual ¿En qué puedo ayudarte?",
-            "buttons":[
-            {
-                "type":"web_url",
-                "url":"http://ayuda.movistar.com.ar/pregunta/como-genero-el-cupon-de-pago.html",
-                "title":"Generando el Cupo de pago"
-                },
-                {
-                "type":"web_url",
-                "url":"http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar",
-                "title":"Desde la App Mi Movistar"
-                },
-                {
-                "type":"web_url",
-                "url":"http://ayuda.movistar.com.ar/pregunta/cuanto-debo.html",
-                "title":"Desde la Web"
-                }
+        {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Si querés ver el detalle de tu deuda, podés hacerlo de las siguientes formas:",
+                "buttons":[
+                      {
+                    "type":"web_url",
+                    "url":"http://ayuda.movistar.com.ar/pregunta/como-genero-el-cupon-de-pago.html",
+                    "title":"Generando el Cupo de pago"
+                    },
+                  {
+                    "type":"web_url",
+                    "url":"http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar",
+                    "title":"Desde la App Mi Movistar"
+                    },
+                  {
+                    "type":"web_url",
+                    "url":"http://ayuda.movistar.com.ar/pregunta/cuanto-debo.html",
+                    "title":"Desde la Web"
+                    }
                 ]
+              }
             }
+      }
         </template>
     </category>
     <category>
         <pattern>OPERADOR</pattern>
         <template>
-            Sobre qué tipo de gestión necesitás ayuda?<br>
-                <strong>
-                    <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbq" target="_blank">Facturación y Pagos</a>
-                </strong>
-                <strong>
-                    <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbr" target="_blank">Soporte Técnico</a>
-                </strong>.</br>
-            <strong>
-                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbs" target="_blank">Saldos y Recargas</a>
-            </strong>.<br>
-                <strong>
-                    <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbt" target="_blank">Trámites</a>
-                </strong>.</br>
-            <strong>
-                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbu" target="_blank">Registración o Acceso a Mi Cuenta Web</a>
-            </strong>
-            <strong>
-                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbv" target="_blank">Compras</a>
-            </strong>
-            <br></br>
+            
+            
+            
+            
+            
+            
+            {   
+            "text": "Sobre qué tipo de gestión necesitás ayuda?",
+            "buttons":[
+            {
+            "type":"web_url",
+            "url":"http://movi.st/hbq",
+            "title":"Facturación y Pagos"
+            },
+            {
+            "type":"web_url",
+            "url":"http://movi.st/hbr",
+            "title":"Soporte Técnico"
+            },
+            {
+            "type":"web_url",
+            "url":"http://movi.st/hbs",
+            "title":"Saldos y Recargas"
+            },
+            {
+            "type":"web_url",
+            "url":"http://movi.st/hbt",
+            "title":"Trámites"
+            },
+            {
+            "type":"web_url",
+            "url":"http://movi.st/hbu",
+            "title":"Registración o Acceso a Mi Cuenta Web"
+            },
+            {
+            "type":"web_url",
+            "url":"http://movi.st/hbv",
+            "title":"Compras"
+            },
+            ]
+            }
         </template>
     </category>
     <category>
@@ -107,7 +134,16 @@
     <category>
         <pattern>PAGAR</pattern>
         <template>
-            En la siguiente  página  te contamos todas las formas y lugares habilitados para pagar tu factura Movistar.
+            {
+            "text": "En la siguiente  página  te contamos todas las formas y lugares habilitados para pagar tu factura Movistar.",
+            "buttons":[
+            {
+            "type":"web_url",
+            "url":"http://ayuda.movistar.com.ar/pregunta/donde-pago-mi-factura.html",
+            "title":"¿Dónde pago mi factura?"
+            }
+            ]
+            }
         </template>
     </category>
     <category>
@@ -128,6 +164,22 @@
         </template>
     </category>
     <category>
+        <pattern>CARGARSALDO</pattern>
+        <template>
+            
+            Acercate a un comercio habilitado y brinda los 10 dígitos de tu Movistar con el monto a recargar. Recibirás un mensaje de texto en tu Movistar que confirma la operación. También podés realizar una recarga de saldo ingresando en Mi Cuenta Web Movistar, seleccioná  Mis recargas y consumos, y luego Cargame Saldo. Escribí la línea en la querés cargar saldo y el importe. El crédito se cobrará en tu próxima factura. Para acceder, tenés que ingresar con tu usuario ó email y contraseña.  Si aún no tenés usuario podés registrarte desde acá.
+
+¿Tenés problemas para ingresar a Mi Cuenta Web Movistar?
+¿Cómo ingresar a Mi Cuenta Web Movistar?
+¿Cómo reseteo mi usuario?
+            
+            Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación. 
+            ¿Pudiste ingresar a Mi Cuenta?
+            - Sí pude ingresar
+            - No pude <a src="http://www.google.com.ar">link</a>
+        </template>
+    </category>
+    <category>
         <pattern>AYUDA</pattern>
         <template>
             Por supuesto! Decime en qué te ayudo.
@@ -136,13 +188,13 @@
     <category>
         <pattern>ESTADO</pattern>
         <template>
-            Lista para responder. ¿En que te puedo ayudar?
+            {"text": "Lista para responder. ¿En que te puedo ayudar?"}
         </template>
     </category>
     <category>
         <pattern>*</pattern>
         <template>
-            Perdón, no entiendo lo que querés decir
+            {"text": "Disculpame, quizás no interpreté tu consulta o no tengo la información que estás buscando, ¿querés preguntarme de otra forma? Tal vez así pueda ayudarte."}
         </template>
     </category>
 </aiml>
