@@ -2,7 +2,9 @@
 <aiml>
     <category>
         <pattern>SALUDAR</pattern>
-        <template>Buenas tardes!!! Soy Sofía. Te cuento que podés realizar tus gestiones de manera fácil y rápida desde la App Mi Movistar ¿En qué puedo ayudarte?</template>
+        <template>
+            Buenos días!!! Soy Sofía. Te cuento que podés realizar tus gestiones de manera fácil y rápida desde la <a href="http://movi.st/heu" target="_blank">App Mi Movistar</a> ¿En qué puedo ayudarte?
+        </template>
     </category>
     <category>
         <pattern>TRABAJO</pattern>
@@ -29,27 +31,31 @@
         <pattern>DEBER</pattern>
         <template>
             Si querés ver el detalle de tu deuda, podés hacerlo de las siguientes formas:
-            - Generando el Cupo de pago.
-            - Desde la App Mi Movistar
-            - Desde la Web.
+            <br>
+                Generando el <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://ayuda.movistar.com.ar/pregunta/como-genero-el-cupon-de-pago.html" target="_blank">Cupo de pago</a>
+            </br>
+            Desde la <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar">App Mi Movistar</a>
+            <br>
+                Desde la <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://ayuda.movistar.com.ar/pregunta/cuanto-debo.html" target="_blank">Web</a>.
+            </br>
         </template>
     </category>
     <category>
         <pattern>OPERADOR</pattern>
         <template>
-            Sobre qué tipo de gestión necesitás ayuda?
-            - Facturación y Pagos.
-            - Soporte Técnico.
-            - Saldos y Recargas.
-            - Trámites.
-            - Registración o Acceso a Mi Cuenta Web.
-            - Compras.
+            Sobre qué tipo de gestión necesitás ayuda?<br>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbq" target="_blank">Facturación y Pagos</a></strong>.<br>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbr" target="_blank">Soporte Técnico</a></strong>.<br/>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbs" target="_blank">Saldos y Recargas</a></strong>.<br/>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbt" target="_blank">Trámites</a></strong>.<br>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbu" target="_blank">Registración o Acceso a Mi Cuenta Web</a></strong>.<br/>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbv" target="_blank">Compras</a></strong>
         </template>
     </category>
     <category>
         <pattern>TELEFONOROTO</pattern>
         <template>
-             Seleccioná uno de los siguientes motivos:
+            Seleccioná uno de los siguientes motivos:
             Ya aboné el servicio, necesito se restablezca
             No tengo señal en mi Movistar
             ¿Por qué no funciona mi celular?
@@ -67,7 +73,33 @@
     <category>
         <pattern>PAGAR</pattern>
         <template>
-              En la siguiente  página  te contamos todas las formas y lugares habilitados para pagar tu factura Movistar.
+            En la siguiente  página  te contamos todas las formas y lugares habilitados para pagar tu factura Movistar.
+        </template>
+    </category>
+    <category>
+        <pattern>CONOCERMIPLAN</pattern>
+        <template>
+            Para conocer tu plan actual podés:
+            Ingresar a Mi Movistar App en la opción Planes y Servicios y luego Mi Plan (para clientes Full y Control).
+            Ingresar en Mi Cuenta, en la opción de Mi plan y Servicios.
+        </template>
+    </category>
+    <category>
+        <pattern>CONOCERMINICK</pattern>
+        <template>
+            Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación. 
+            ¿Pudiste ingresar a Mi Cuenta?
+            - Sí pude ingresar
+            - No pude <a src="http://www.google.com.ar">link</a>
+        </template>
+    </category>
+    <category>
+        <pattern>*</pattern>
+        <template>
+            Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación. 
+            ¿Pudiste ingresar a Mi Cuenta?
+            - Sí pude ingresar
+            - No pude <a src="http://www.google.com.ar">link</a>
         </template>
     </category>
 </aiml>
