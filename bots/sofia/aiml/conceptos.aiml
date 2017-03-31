@@ -155,9 +155,29 @@
     <category>
         <pattern>CONOCERMIPLAN</pattern>
         <template>
-            Para conocer tu plan actual podés:
-            Ingresar a Mi Movistar App en la opción Planes y Servicios y luego Mi Plan (para clientes Full y Control).
-            Ingresar en Mi Cuenta, en la opción de Mi plan y Servicios.
+            {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":" Para conocer tu plan actual podés:
+                        Ingresar a Mi Movistar App en la opción Planes y Servicios y luego Mi Plan (para clientes Full y Control).
+                        Ingresar en Mi Cuenta, en la opción de Mi plan y Servicios.",
+                "buttons":[
+                     {
+                    "type":"Mi Movistar APP",
+                    "url":"http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar",
+                    "title":"¿Dónde pago mi factura?"
+                    },
+                     {
+                    "type":"Mi Movistar APP",
+                    "url":"http://movi.st/hbx",
+                    "title":"Mi Cuenta"
+                    }
+                ]
+              }
+            }
+            }
         </template>
     </category>
     <category>
