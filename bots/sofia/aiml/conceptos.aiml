@@ -183,10 +183,22 @@
     <category>
         <pattern>CONOCERMINICK</pattern>
         <template>
-            Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación. 
-            ¿Pudiste ingresar a Mi Cuenta?
-            - Sí pude ingresar
-            - No pude <a src="http://www.google.com.ar">link</a>
+            {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación.",
+                "buttons":[
+                     {
+                    "type":"Mi Movistar APP",
+                    "url":"https://idm.movistar.com.ar/",
+                    "title":"Mi Cuenta"
+                    }
+                ]
+              }
+            }
+            }
         </template>
     </category>
     <category>
@@ -208,7 +220,7 @@
     <category>
         <pattern>AYUDA</pattern>
         <template>
-            Por supuesto! Decime en qué te ayudo.
+            {"text": "Por supuesto! Decime en qué te ayudo."}
         </template>
     </category>
     <category>
