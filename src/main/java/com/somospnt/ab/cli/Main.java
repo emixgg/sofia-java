@@ -24,37 +24,16 @@ public class Main {
         MagicStrings.root_path = System.getProperty("user.dir");
         log.info("Working Directory = " + MagicStrings.root_path);
         AIMLProcessor.extension = new PCAIMLProcessorExtension();
-        mainFunction(args);
+        inicializarBot(args);
     }
 
-    public static void mainFunction(String[] args) {
-        String botName = "super";
+    public static void inicializarBot(String[] args) {
+        String nombreBot = "sofia";
         String action = "chat";
         log.info(MagicStrings.programNameVersion);
-        for (String s : args) {
-            log.info(s);
-            String[] splitArg = s.split("=");
-            if (splitArg.length >= 2) {
-                String option = splitArg[0];
-                String value = splitArg[1];
-                if (option.equals("bot")) {
-                    botName = value;
-                }
-                if (option.equals("action")) {
-                    action = value;
-                }
-                if (option.equals("trace") && value.equals("true")) {
-                    MagicBooleans.trace_mode = true;
-                } else {
-                    MagicBooleans.trace_mode = false;
-                }
-            }
-        }
-
         log.info("trace mode = " + MagicBooleans.trace_mode);
         Graphmaster.enableShortCuts = true;
-        Bot bot = new Bot(botName, MagicStrings.root_path, action); //
-        //bot.preProcessor.normalizeFile("c:/ab/log1.txt", "c:/ab/data/lognormal.txt");
+        Bot bot = new Bot(nombreBot, MagicStrings.root_path, action); //
         if (bot.brain.getCategories().size() < 100) {
             bot.brain.printgraph();
         }
@@ -64,7 +43,6 @@ public class Main {
 
     public static void testChat(Bot bot, boolean traceMode) {
         Chat chatSession = new Chat(bot);
-//        bot.preProcessor.normalizeFile("c:/ab/bots/super/aiml/thats.txt", "c:/ab/bots/super/aiml/normalthats.txt");
         bot.brain.nodeStats();
         MagicBooleans.trace_mode = traceMode;
         String textLine = "";
