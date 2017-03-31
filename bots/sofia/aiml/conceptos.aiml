@@ -44,12 +44,17 @@
         <pattern>OPERADOR</pattern>
         <template>
             Sobre qué tipo de gestión necesitás ayuda?<br>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbq" target="_blank">Facturación y Pagos</a></strong>.<br>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbr" target="_blank">Soporte Técnico</a></strong>.<br/>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbs" target="_blank">Saldos y Recargas</a></strong>.<br/>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbt" target="_blank">Trámites</a></strong>.<br>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbu" target="_blank">Registración o Acceso a Mi Cuenta Web</a></strong>.<br/>
+                <strong>
+                    <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbq" target="_blank">Facturación y Pagos</a>
+                </strong>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbr" target="_blank">Soporte Técnico</a></strong>.</br>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbs" target="_blank">Saldos y Recargas</a></strong>.<br>
+            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbt" target="_blank">Trámites</a></strong>.</br>
+            <strong>
+                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbu" target="_blank">Registración o Acceso a Mi Cuenta Web</a>
+            </strong>
             <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbv" target="_blank">Compras</a></strong>
+            <br></br>
         </template>
     </category>
     <category>
