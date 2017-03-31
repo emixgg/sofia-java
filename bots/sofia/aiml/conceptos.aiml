@@ -64,47 +64,47 @@
     <category>
         <pattern>OPERADOR</pattern>
         <template>
-            
-            
-            
-            
-            
-            
-            {   
-            "text": "Sobre qué tipo de gestión necesitás ayuda?",
-            "buttons":[
-            {
-            "type":"web_url",
-            "url":"http://movi.st/hbq",
-            "title":"Facturación y Pagos"
-            },
-            {
-            "type":"web_url",
-            "url":"http://movi.st/hbr",
-            "title":"Soporte Técnico"
-            },
-            {
-            "type":"web_url",
-            "url":"http://movi.st/hbs",
-            "title":"Saldos y Recargas"
-            },
-            {
-            "type":"web_url",
-            "url":"http://movi.st/hbt",
-            "title":"Trámites"
-            },
-            {
-            "type":"web_url",
-            "url":"http://movi.st/hbu",
-            "title":"Registración o Acceso a Mi Cuenta Web"
-            },
-            {
-            "type":"web_url",
-            "url":"http://movi.st/hbv",
-            "title":"Compras"
-            },
-            ]
+        {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Sobre qué tipo de gestión necesitás ayuda",
+                "buttons":[
+                {
+                "type":"web_url",
+                "url":"http://movi.st/hbq",
+                "title":"Facturación y Pagos"
+                },
+                {
+                "type":"web_url",
+                "url":"http://movi.st/hbr",
+                "title":"Soporte Técnico"
+                },
+                {
+                "type":"web_url",
+                "url":"http://movi.st/hbs",
+                "title":"Saldos y Recargas"
+                },
+                {
+                "type":"web_url",
+                "url":"http://movi.st/hbt",
+                "title":"Trámites"
+                },
+                {
+                "type":"web_url",
+                "url":"http://movi.st/hbu",
+                "title":"Registración o Acceso a Mi Cuenta Web"
+                },
+                {
+                "type":"web_url",
+                "url":"http://movi.st/hbv",
+                "title":"Compras"
+                }
+                ]
+              }
             }
+        }
         </template>
     </category>
     <category>
@@ -135,14 +135,20 @@
         <pattern>PAGAR</pattern>
         <template>
             {
-            "text": "En la siguiente  página  te contamos todas las formas y lugares habilitados para pagar tu factura Movistar.",
-            "buttons":[
-            {
-            "type":"web_url",
-            "url":"http://ayuda.movistar.com.ar/pregunta/donde-pago-mi-factura.html",
-            "title":"¿Dónde pago mi factura?"
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"En la siguiente  página  te contamos todas las formas y lugares habilitados para pagar tu factura Movistar.",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"http://ayuda.movistar.com.ar/pregunta/donde-pago-mi-factura.html",
+                    "title":"¿Dónde pago mi factura?"
+                    }
+                ]
+              }
             }
-            ]
             }
         </template>
     </category>
