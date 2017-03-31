@@ -2,5 +2,6 @@
     "appSecret": "ad6e93520d9f3091cb67771a0a044c71",
     "pageAccessToken": "EAAaEcRMYbZCoBACEWm3VQDCCey9jk0LZA62B0o32kKI8G8cIGDlk47211pn925HNXbcEaB8vqT8nMXVMQLwp5jdaPFzYKj875K6RD1o7j5nYtpYfbu2qPlZBgQf4jIZAcSOzAj68YeMwXpmJ6gkM1UBKBp4leum8FXWI5rCGNwZDZD",
     "validationToken": "sofiaBot",
-    "serverURL": "https://marta-bot-te.herokuapp.com/"
+    "serverURL": "https://marta-bot-te.herokuapp.com/",
+    "botApi": "https://sofia-bot.herokuapp.com/charlar"
 }
