@@ -1,5 +1,4 @@
-const config = require('config'),
-      webhookService = require('../service/WebhookService');
+const webhookService = require('../service/WebhookService');
 
 function resolverChallenge(req, res) {
     if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === VALIDATION_TOKEN) {
