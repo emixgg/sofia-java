@@ -1,7 +1,8 @@
-const webhookService = require('../service/WebhookService');
+const webhookService = require('../service/WebhookService'),
+        config = require('../config/facebookConfiguration');
 
 function resolverChallenge(req, res) {
-    if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === VALIDATION_TOKEN) {
+    if (req.query['hub.mode'] === 'subscribe' && req.query['hub.verify_token'] === config.VALIDATION_TOKEN) {
         res.status(200).send(req.query['hub.challenge']);
     } else {
         res.sendStatus(403);

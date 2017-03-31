@@ -1,3 +1,5 @@
+const config = require("../config/facebookConfiguration");
+
 function verifyRequestSignature(req, res, buf) {
     var signature = req.headers["x-hub-signature"];
 
@@ -8,7 +10,7 @@ function verifyRequestSignature(req, res, buf) {
         var method = elements[0];
         var signatureHash = elements[1];
 
-        var expectedHash = crypto.createHmac('sha1', APP_SECRET)
+        var expectedHash = crypto.createHmac('sha1', config.APP_SECRET)
                 .update(buf)
                 .digest('hex');
 
