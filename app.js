@@ -3,14 +3,12 @@
 const   bodyParser = require('body-parser'),
         crypto = require('crypto'),
         express = require('express'),
-        config = require('../config/facebookConfiguration'),
+        config = require('./private/config/facebookConfiguration'),
         https = require('https');
 var verifier = require('./private/util/verifier');
 var webhookRouter = require('./private/router/FacebookRouter');
 
 var app = express();
-
-const config = require('config');
 
 app.set('port', process.env.PORT || 5000);
 app.set('view engine', 'ejs');
