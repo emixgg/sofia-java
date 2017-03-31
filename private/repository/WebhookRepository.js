@@ -13,7 +13,7 @@ function charlar(mensaje) {
         }, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log("Devolviendo respuesta existente %s", body);
-                resolve(body);
+                resolve("<a href='wwww.google.com'>www.google.com</a>");
             } else {
                 console.error("Error al llamar a BOT API", response.statusCode, response.statusMessage, body.error);
                 return reject(error);
