@@ -3,17 +3,19 @@
     <category>
         <pattern>SALUDAR</pattern>
         <template>
-            Buenos días!!! Soy Sofía. Te cuento que podés realizar tus gestiones de manera fácil y rápida desde la <a href="http://movi.st/heu" target="_blank">App Mi Movistar</a> ¿En qué puedo ayudarte?
+            {"text": "¡Hola! ¿En qué puedo ayudarte?"}
         </template>
     </category>
     <category>
         <pattern>TRABAJO</pattern>
-        <template>Soy tu asistente virtual</template>
+        <template>
+            {"text": "¡Hola! Soy tu asistente virtual ¿En qué puedo ayudarte?"}
+        </template>
     </category>
     <category>
         <pattern>CONSULTAS</pattern>
         <template>
-            Las consultas más comunes de los usuarios son:
+            {"text": "Las consultas más comunes de los usuarios son:
             ¿Cuánto debo?
             No funciona el teléfono
             Quiero hablar con un operador
@@ -25,19 +27,32 @@
             ¿Cómo cambio mi plan?
             No me puedo registrar
             ¿Cómo obtengo mi usuario y contraseña?
+            "}
         </template>
     </category>
     <category>
         <pattern>DEBER</pattern>
         <template>
-            Si querés ver el detalle de tu deuda, podés hacerlo de las siguientes formas:
-            <br>
-                Generando el <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://ayuda.movistar.com.ar/pregunta/como-genero-el-cupon-de-pago.html" target="_blank">Cupo de pago</a>
-            </br>
-            Desde la <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar">App Mi Movistar</a>
-            <br>
-                Desde la <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://ayuda.movistar.com.ar/pregunta/cuanto-debo.html" target="_blank">Web</a>.
-            </br>
+            {   
+            "text": "¡Hola! Soy tu asistente virtual ¿En qué puedo ayudarte?",
+            "buttons":[
+            {
+                "type":"web_url",
+                "url":"http://ayuda.movistar.com.ar/pregunta/como-genero-el-cupon-de-pago.html",
+                "title":"Generando el Cupo de pago"
+                },
+                {
+                "type":"web_url",
+                "url":"http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar",
+                "title":"Desde la App Mi Movistar"
+                },
+                {
+                "type":"web_url",
+                "url":"http://ayuda.movistar.com.ar/pregunta/cuanto-debo.html",
+                "title":"Desde la Web"
+                }
+                ]
+            }
         </template>
     </category>
     <category>
@@ -47,32 +62,46 @@
                 <strong>
                     <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbq" target="_blank">Facturación y Pagos</a>
                 </strong>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbr" target="_blank">Soporte Técnico</a></strong>.</br>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbs" target="_blank">Saldos y Recargas</a></strong>.<br>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbt" target="_blank">Trámites</a></strong>.</br>
+                <strong>
+                    <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbr" target="_blank">Soporte Técnico</a>
+                </strong>.</br>
+            <strong>
+                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbs" target="_blank">Saldos y Recargas</a>
+            </strong>.<br>
+                <strong>
+                    <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbt" target="_blank">Trámites</a>
+                </strong>.</br>
             <strong>
                 <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbu" target="_blank">Registración o Acceso a Mi Cuenta Web</a>
             </strong>
-            <strong><a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbv" target="_blank">Compras</a></strong>
+            <strong>
+                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movi.st/hbv" target="_blank">Compras</a>
+            </strong>
             <br></br>
         </template>
     </category>
     <category>
         <pattern>TELEFONOROTO</pattern>
         <template>
-            Seleccioná uno de los siguientes motivos:
-            Ya aboné el servicio, necesito se restablezca
-            No tengo señal en mi Movistar
-            ¿Por qué no funciona mi celular?
+            Seleccioná uno de los siguientes motivos:<br>
+                <a href="javascript:void(0)" onclick="Write('Ya pagué')">Ya aboné el servicio, necesito se restablezca</a>
+                <br>
+                    <a href="javascript:void(0)" onclick="Write('No tengo señal')">No tengo señal en mi Movistar</a>
+                </br>
+                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movistar.com.ar/atencion-al-cliente/#/pregunta/por-que-no-funciona-mi-celular">¿Por qué no funciona mi celular?</a>
+            </br>
         </template>
     </category>
     <category>
         <pattern>CAMBIAREQUIPO</pattern>
         <template>
-            Podrás dar de alta una línea:
-            A través de la Tienda Movistar
-            Asistiendo a alguno de los Centros de Experiencia Cliente
-            También podés llamar al 0800 2226116 donde un asesor especializado te dará toda la información que necesitás.
+            Podrás dar de alta una línea:<br>
+                A través de la <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://www.movistar.com.ar/tienda" target="_blank">Tienda Movistar</a>
+                <br>
+                    Asistiendo a alguno de los <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://ayuda.movistar.com.ar/pregunta/cuales-son-los-centros-de-experiencia-de-clientes-de-movistar.html">Centros de Experiencia Cliente</a>
+                </br>
+                También podés llamar al <strong>0800 2226116</strong> donde un asesor especializado te dará toda la información que necesitás.
+            </br>
         </template>
     </category>
     <category>
@@ -96,6 +125,18 @@
             ¿Pudiste ingresar a Mi Cuenta?
             - Sí pude ingresar
             - No pude <a src="http://www.google.com.ar">link</a>
+        </template>
+    </category>
+    <category>
+        <pattern>AYUDA</pattern>
+        <template>
+            Por supuesto! Decime en qué te ayudo.
+        </template>
+    </category>
+    <category>
+        <pattern>ESTADO</pattern>
+        <template>
+            Lista para responder. ¿En que te puedo ayudar?
         </template>
     </category>
     <category>
