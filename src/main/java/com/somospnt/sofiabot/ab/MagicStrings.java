@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,12 +18,12 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 /**
  * Global values for many strings in Program AB
  */
 public class MagicStrings {
+
     // General global strings
     public static String programNameVersion = "Program AB 0.0.4.3 beta -- AI Foundation Reference AIML 2.0 implementation";
     public static String comment = "removed some recursion from Path";
@@ -89,13 +90,12 @@ public class MagicStrings {
     public static String map_predecessor = "predecessor";
     // paths
     public static String root_path = "c:/ab";
-    public static String bot_path = root_path+"/bots";
-    public static String bot_name_path = bot_path+"/super";
-    public static String aimlif_path = bot_path+"/aimlif";
-    public static String aiml_path = bot_path+"/aiml";
-    public static String config_path = bot_path+"/config";
-    public static String log_path = bot_path+"/log";
-    public static String sets_path = bot_path+"/sets";
-    public static String maps_path = bot_path+"/maps";
+    public static String bot_path = root_path + "/bots";
+    public static String bot_name_path = bot_path + "/super";
+    public static String aimlif_path = bot_path + "/aimlif";
+    public static String aiml_path = bot_path + "/aiml";
+    public static String config_path = bot_path + "/config";
+    public static String log_path = bot_path + "/log";
+    public static String sets_path = bot_path + "/sets";
+    public static String maps_path = bot_path + "/maps";
 }
-

@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,18 +18,20 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
+ */
 import java.util.ArrayList;
-
 
 /**
  * Array of values matching wildcards
  */
 public class Stars extends ArrayList<String> {
-    public String star (int i) {
-        if (i < size())
-        return get(i);
-        else return null;
+
+    public String star(int i) {
+        if (i < size()) {
+            return get(i);
+        } else {
+            return null;
+        }
     }
 
 }

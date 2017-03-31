@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,19 +18,22 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 /**
- * structure to hold binding of wildcards in input pattern, that pattern and topicpattern
+ * structure to hold binding of wildcards in input pattern, that pattern and
+ * topicpattern
  */
 public class StarBindings {
+
     public Stars inputStars;
     public Stars thatStars;
     public Stars topicStars;
-    /** Constructor  -- this class has public members
+
+    /**
+     * Constructor -- this class has public members
      *
      */
-    public StarBindings () {
+    public StarBindings() {
         inputStars = new Stars();
         thatStars = new Stars();
         topicStars = new Stars();

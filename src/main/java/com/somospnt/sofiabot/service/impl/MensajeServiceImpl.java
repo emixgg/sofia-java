@@ -16,23 +16,6 @@ public class MensajeServiceImpl implements MensajeService {
     private static final Logger log = LoggerFactory.getLogger(MensajeServiceImpl.class);
 
     @Override
-    public String saludar() {
-        Chat chatSession = new Chat(bot);
-
-        bot.brain.nodeStats();
-
-        String response = chatSession.multisentenceRespond("Hello");
-        while (response.contains("&lt;")) {
-            response = response.replace("&lt;", "<");
-        }
-        while (response.contains("&gt;")) {
-            response = response.replace("&gt;", ">");
-        }
-        log.info("Robot: " + response);
-        return response;
-    }
-
-    @Override
     public String responder(String mensaje) {
         Chat chatSession = new Chat(bot);
 

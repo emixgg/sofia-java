@@ -17,11 +17,6 @@ public class ComunicacionController {
     @Autowired
     private MensajeService mensajeService;
 
-    @GetMapping("/saludar")
-    public String devolverSaludo() {
-        return mensajeService.saludar();
-    }
-
     @PostMapping("/charlar")
     public String charlar(@RequestBody String mensaje) {
         return mensajeService.responder(mensaje);

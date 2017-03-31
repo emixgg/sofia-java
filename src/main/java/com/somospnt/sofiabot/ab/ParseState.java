@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,11 +18,12 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
- /**
-ParseState is a helper class for AIMLProcessor
+ */
+/**
+ * ParseState is a helper class for AIMLProcessor
  */
 public class ParseState {
+
     public Nodemapper leaf;
     public String input;
     public String that;
@@ -30,16 +32,16 @@ public class ParseState {
     public int depth;
     public Predicates vars;
 
-     /**
-      * Constructor - class has public members
-      *
-      * @param depth      depth in parse tree
-      * @param chatSession   client session
-      * @param input         client input
-      * @param that          bot's last sentence
-      * @param topic         current topic
-      * @param leaf          node containing the category processed
-      */
+    /**
+     * Constructor - class has public members
+     *
+     * @param depth depth in parse tree
+     * @param chatSession client session
+     * @param input client input
+     * @param that bot's last sentence
+     * @param topic current topic
+     * @param leaf node containing the category processed
+     */
     public ParseState(int depth, Chat chatSession, String input, String that, String topic, Nodemapper leaf) {
         this.chatSession = chatSession;
         this.input = input;

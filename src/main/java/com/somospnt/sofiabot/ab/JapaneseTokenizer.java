@@ -19,15 +19,18 @@ import org.slf4j.LoggerFactory;
  * see http://atilika.org/
  */
 public class JapaneseTokenizer {
-	private static final Logger log = LoggerFactory
-			.getLogger(JapaneseTokenizer.class);
+
+    private static final Logger log = LoggerFactory
+            .getLogger(JapaneseTokenizer.class);
     //static final Tokenizer tokenizer = Tokenizer.builder().build();
     static final Pattern tagPattern = Pattern.compile("(<.*>.*</.*>)|(<.*/>)");
-    static Set<Character.UnicodeBlock> japaneseUnicodeBlocks = new HashSet<Character.UnicodeBlock>() {{
-        add(Character.UnicodeBlock.HIRAGANA);
-        add(Character.UnicodeBlock.KATAKANA);
-        add(Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS);
-    }};
+    static Set<Character.UnicodeBlock> japaneseUnicodeBlocks = new HashSet<Character.UnicodeBlock>() {
+        {
+            add(Character.UnicodeBlock.HIRAGANA);
+            add(Character.UnicodeBlock.KATAKANA);
+            add(Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS);
+        }
+    };
 
 
     /*public static ArrayList<String> tokenize(String sentence) {
@@ -46,7 +49,7 @@ public class JapaneseTokenizer {
         }
         return result.trim();
     }*/
-  /*  public static String morphSentence (String sentence) {
+ /*  public static String morphSentence (String sentence) {
 
         Matcher matcher = tagPattern.matcher(sentence);
         String result = "";
@@ -67,7 +70,7 @@ public class JapaneseTokenizer {
         while (result.contains("$ ")) result = result.replace("$ ", "$");
         while (result.contains("  ")) result = result.replace("  "," ");
         return result.trim();
-    }*/        /*
+    }*/ /*
     public static String morphSentence (String sentence) {
         String result = "";
         for (char c : sentence.toCharArray()) {
@@ -83,19 +86,19 @@ public class JapaneseTokenizer {
         while (result.contains("  ")) result = result.replace("  "," ");
         return result.trim();
     }
-    */
+     */
 
     /**
      * Tokenize a fragment of the input that contains only text
      *
-     * @param fragment   fragment of input containing only text and no XML tags
-     * @return  tokenized fragment
+     * @param fragment fragment of input containing only text and no XML tags
+     * @return tokenized fragment
      */
     public static String buildFragment(String fragment) {
 
         String result = "";
-        for(Morpheme e : Tagger.parse(fragment)) {
-            result += e.surface+" ";
+        for (Morpheme e : Tagger.parse(fragment)) {
+            result += e.surface + " ";
             //
             // log.info("Feature "+e.feature+" Surface="+e.surface);
         }
@@ -103,30 +106,46 @@ public class JapaneseTokenizer {
     }
 
     /**
-     * Morphological analysis of an input sentence that contains an AIML pattern.
+     * Morphological analysis of an input sentence that contains an AIML
+     * pattern.
      *
      * @param sentence
-     * @return       morphed sentence with one space between words, preserving XML markup and AIML $ operation
+     * @return morphed sentence with one space between words, preserving XML
+     * markup and AIML $ operation
      */
-    public static String morphSentence (String sentence) {
-        if (!MagicBooleans.jp_morphological_analysis) return sentence;
+    public static String morphSentence(String sentence) {
+        if (!MagicBooleans.jp_morphological_analysis) {
+            return sentence;
+        }
         String result = "";
         Matcher matcher = tagPattern.matcher(sentence);
         while (matcher.find()) {
             int i = matcher.start();
             int j = matcher.end();
             String prefix, tag;
-            if (i > 0) prefix = sentence.substring(0, i-1); else prefix = "";
+            if (i > 0) {
+                prefix = sentence.substring(0, i - 1);
+            } else {
+                prefix = "";
+            }
             tag = sentence.substring(i, j);
-            result += " "+buildFragment(prefix)+" "+tag;
-            if (j < sentence.length()) sentence = sentence.substring(j, sentence.length()); else sentence = "";
+            result += " " + buildFragment(prefix) + " " + tag;
+            if (j < sentence.length()) {
+                sentence = sentence.substring(j, sentence.length());
+            } else {
+                sentence = "";
+            }
             //System.out.print("Start index: " + matcher.start());
             //System.out.print("End index: " + matcher.end() + " ");
             //log.info(matcher.group());
         }
-        result += " "+buildFragment(sentence);
-        while (result.contains("$ ")) result = result.replace("$ ", "$");
-        while (result.contains("  ")) result = result.replace("  "," ");
+        result += " " + buildFragment(sentence);
+        while (result.contains("$ ")) {
+            result = result.replace("$ ", "$");
+        }
+        while (result.contains("  ")) {
+            result = result.replace("  ", " ");
+        }
         return result.trim();
     }
 

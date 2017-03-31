@@ -2,6 +2,7 @@ package com.somospnt.sofiabot.ab;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -20,29 +21,29 @@ import org.slf4j.LoggerFactory;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
-
+ */
 /**
  * History object to maintain history of input, that request and response
  *
- * @param <T>    type of history object
+ * @param <T> type of history object
  */
 public class History<T> {
-	private static final Logger log = LoggerFactory.getLogger(History.class);
+
+    private static final Logger log = LoggerFactory.getLogger(History.class);
     private Object[] history;
     private String name;
 
     /**
      * Constructor with default history name
      */
-    public History () {
+    public History() {
         this("unknown");
     }
 
     /**
      * Constructor with history name
      *
-     * @param name    name of history
+     * @param name name of history
      */
     public History(String name) {
         this.name = name;
@@ -52,11 +53,11 @@ public class History<T> {
     /**
      * add an item to history
      *
-     * @param item    history item to add
+     * @param item history item to add
      */
     public void add(T item) {
-        for (int i = MagicNumbers.max_history-1; i > 0; i--) {
-              history[i] = history[i-1];
+        for (int i = MagicNumbers.max_history - 1; i > 0; i--) {
+            history[i] = history[i - 1];
         }
         history[0] = item;
     }
@@ -64,29 +65,37 @@ public class History<T> {
     /**
      * get an item from history
      *
-     * @param index       history index
-     * @return            history item
+     * @param index history index
+     * @return history item
      */
-    public T get (int index) {
+    public T get(int index) {
         if (index < MagicNumbers.max_history) {
-            if (history[index] == null) return null;
-            else return (T)history[index];
+            if (history[index] == null) {
+                return null;
+            } else {
+                return (T) history[index];
+            }
+        } else {
+            return null;
         }
-        else return null;
     }
 
     /**
      * get a String history item
      *
-     * @param index    history index
-     * @return         history item
+     * @param index history index
+     * @return history item
      */
-    public String getString (int index) {
+    public String getString(int index) {
         if (index < MagicNumbers.max_history) {
-            if (history[index] == null) return MagicStrings.unknown_history_item;
-            else return (String)history[index];
+            if (history[index] == null) {
+                return MagicStrings.unknown_history_item;
+            } else {
+                return (String) history[index];
+            }
+        } else {
+            return null;
         }
-        else return null;
     }
 
     /**
@@ -95,9 +104,11 @@ public class History<T> {
     public void printHistory() {
         int i;
         for (i = 0; get(i) != null; i++) {
-            log.info(name+"History "+(i+1)+" = "+get(i));
+            log.info(name + "History " + (i + 1) + " = " + get(i));
             log.info("{}", String.valueOf(get(i).getClass()).contains("History"));
-            if (String.valueOf(get(i).getClass()).contains("History")) ((History)get(i)).printHistory();
+            if (String.valueOf(get(i).getClass()).contains("History")) {
+                ((History) get(i)).printHistory();
+            }
         }
     }
 }

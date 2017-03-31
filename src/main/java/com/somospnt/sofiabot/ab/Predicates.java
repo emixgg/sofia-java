@@ -1,4 +1,5 @@
 package com.somospnt.sofiabot.ab;
+
 /* Program AB Reference AIML 2.0 implementation
         Copyright (C) 2013 ALICE A.I. Foundation
         Contact: info@alicebot.org
@@ -17,7 +18,7 @@ package com.somospnt.sofiabot.ab;
         License along with this library; if not, write to the
         Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
         Boston, MA  02110-1301, USA.
-*/
+ */
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,20 +34,22 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class Predicates extends HashMap<String, String> {
-	private static final long serialVersionUID = 1L;
-	private static final Logger log = LoggerFactory.getLogger(Predicates.class);
-	
 
-	/**
+    private static final long serialVersionUID = 1L;
+    private static final Logger log = LoggerFactory.getLogger(Predicates.class);
+
+    /**
      * save a predicate value
      *
-     * @param key         predicate name
-     * @param value       predicate value
-     * @return            predicate value
+     * @param key predicate name
+     * @param value predicate value
+     * @return predicate value
      */
     @Override
-	public String put(String key, String value) {
-        if (MagicBooleans.trace_mode) log.info("Setting predicate {} to {}", key, value);
+    public String put(String key, String value) {
+        if (MagicBooleans.trace_mode) {
+            log.info("Setting predicate {} to {}", key, value);
+        }
         return super.put(key, value);
     }
 
@@ -54,12 +57,15 @@ public class Predicates extends HashMap<String, String> {
      * get a predicate value
      *
      * @param key predicate name
-     * @return    predicate value
+     * @return predicate value
      */
     public String get(String key) {
         String result = super.get(key);
-        if (result == null) return MagicStrings.unknown_predicate_value;
-        else return result;
+        if (result == null) {
+            return MagicStrings.unknown_predicate_value;
+        } else {
+            return result;
+        }
     }
 
     /**
@@ -67,15 +73,15 @@ public class Predicates extends HashMap<String, String> {
      *
      * @param in input stream
      */
-    public void getPredicateDefaultsFromInputStream (InputStream in)  {
+    public void getPredicateDefaultsFromInputStream(InputStream in) {
         BufferedReader br = new BufferedReader(new InputStreamReader(in));
         String strLine;
         try {
             //Read File Line By Line
-            while ((strLine = br.readLine()) != null)   {
+            while ((strLine = br.readLine()) != null) {
                 if (strLine.contains(":")) {
                     String property = strLine.substring(0, strLine.indexOf(":"));
-                    String value = strLine.substring(strLine.indexOf(":")+1);
+                    String value = strLine.substring(strLine.indexOf(":") + 1);
                     put(property, value);
                 }
             }
@@ -84,12 +90,13 @@ public class Predicates extends HashMap<String, String> {
         }
     }
 
-    /** read predicate defaults from a file
+    /**
+     * read predicate defaults from a file
      *
-     * @param filename        name of file
+     * @param filename name of file
      */
-    public void getPredicateDefaults (String filename) {
-        try{
+    public void getPredicateDefaults(String filename) {
+        try {
             // Open the file that is the first
             // command line parameter
             File file = new File(filename);
@@ -99,10 +106,8 @@ public class Predicates extends HashMap<String, String> {
                 getPredicateDefaultsFromInputStream(fstream);
                 fstream.close();
             }
-        }catch (Exception e){//Catch exception if any
+        } catch (Exception e) {//Catch exception if any
             log.error("Cannot get predicate defaults from '" + filename + "': " + e, e);
         }
     }
 }
-
-
