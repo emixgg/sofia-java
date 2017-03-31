@@ -34,53 +34,12 @@ public class Main {
         inicializarBot(args);
     }
 
-//    @Bean
-//    public Chat chatSession() {
-//        String nombreBot = "sofia";
-//        String action = "chat";
-//        Bot bot = new Bot(nombreBot, MagicStrings.root_path, action);
-//        Graphmaster.enableShortCuts = true;
-//        if (bot.brain.getCategories().size() < 100) {
-//            bot.brain.printgraph();
-//        }
-//        return new Chat(bot);
-//    }
     public static void inicializarBot(String[] args) {
         String nombreBot = "sofia";
         String action = "chat";
         log.info(MagicStrings.programNameVersion);
         log.info("trace mode = " + MagicBooleans.trace_mode);
         bot = new Bot(nombreBot, MagicStrings.root_path, action); //
-//        testChat(bot, MagicBooleans.trace_mode);
-    }
-
-    public static void testChat(Bot bot, boolean traceMode) {
-        Chat chatSession = new Chat(bot);
-        bot.brain.nodeStats();
-        String textLine = "";
-        while (true) {
-            System.out.print("Human: ");
-            textLine = IOUtils.readInputTextLine();
-            if (textLine == null || textLine.length() < 1) {
-                textLine = MagicStrings.null_input;
-            }
-            if (textLine.equals("q")) {
-                System.exit(0);
-            } else {
-                String request = textLine;
-                log.debug("STATE=" + request + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
-                String response = chatSession.multisentenceRespond(request);
-                while (response.contains("&lt;")) {
-                    response = response.replace("&lt;", "<");
-                }
-                while (response.contains("&gt;")) {
-                    response = response.replace("&gt;", ">");
-                }
-                log.info("Robot: " + response);
-
-            }
-
-        }
     }
 
     @GetMapping("/saludar")
@@ -90,7 +49,6 @@ public class Main {
 
         bot.brain.nodeStats();
 
-//        log.debug("STATE=" + request + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
         String response = chatSession.multisentenceRespond("Hello");
         while (response.contains("&lt;")) {
             response = response.replace("&lt;", "<");
@@ -98,7 +56,7 @@ public class Main {
         while (response.contains("&gt;")) {
             response = response.replace("&gt;", ">");
         }
-//                log.info("Robot: " + response);
+                log.info("Robot: " + response);
         return response;
     }
 
@@ -109,7 +67,7 @@ public class Main {
 
         bot.brain.nodeStats();
 
-//        log.debug("STATE=" + request + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
+        log.debug("STATE=" + body + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
         String response = chatSession.multisentenceRespond(body);
         while (response.contains("&lt;")) {
             response = response.replace("&lt;", "<");
@@ -117,7 +75,7 @@ public class Main {
         while (response.contains("&gt;")) {
             response = response.replace("&gt;", ">");
         }
-//                log.info("Robot: " + response);
+        log.info("Robot: " + response);
         return response;
     }
 
