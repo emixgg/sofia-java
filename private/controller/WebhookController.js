@@ -1,4 +1,5 @@
-const config = require('config');
+const config = require('config'),
+      request = require('request');
 
 const APP_SECRET = (process.env.MESSENGER_APP_SECRET) ? process.env.MESSENGER_APP_SECRET : config.get('appSecret');
 

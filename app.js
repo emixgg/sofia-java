@@ -3,8 +3,7 @@
 const   bodyParser = require('body-parser'),
         crypto = require('crypto'),
         express = require('express'),
-        https = require('https'),
-        request = require('request');
+        https = require('https');
 var verifier = require('./private/util/verifier');
 var webhookRouter = require('./private/router/FacebookRouter');
 
