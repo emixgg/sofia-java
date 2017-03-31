@@ -108,27 +108,63 @@
         </template>
     </category>
     <category>
-        <pattern>TELEFONOROTO</pattern>
+        <pattern>CAMBIAREQUIPO</pattern>
         <template>
-            Seleccioná uno de los siguientes motivos:<br>
-                <a href="javascript:void(0)" onclick="Write('Ya pagué')">Ya aboné el servicio, necesito se restablezca</a>
-                <br>
-                    <a href="javascript:void(0)" onclick="Write('No tengo señal')">No tengo señal en mi Movistar</a>
-                </br>
-                <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://movistar.com.ar/atencion-al-cliente/#/pregunta/por-que-no-funciona-mi-celular">¿Por qué no funciona mi celular?</a>
-            </br>
+            {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Podrás dar de alta una línea:
+                        A través de la Tienda Movistar
+                        Asistiendo a alguno de los Centros de Experiencia Cliente
+                        También podés llamar al 0800 2226116 donde un asesor especializado te dará toda la información que necesitás.",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"http://www.movistar.com.ar/tienda",
+                    "title":"Tienda Movistar"
+                    },
+                     {
+                    "type":"web_url",
+                    "url":"http://ayuda.movistar.com.ar/pregunta/cuales-son-los-centros-de-experiencia-de-clientes-de-movistar.html",
+                    "title":"Centros de Experiencia Cliente"
+                    }
+                ]
+              }
+            }
+            }
         </template>
     </category>
     <category>
-        <pattern>CAMBIAREQUIPO</pattern>
+        <pattern>CONSULTARPROMOCIONES</pattern>
         <template>
-            Podrás dar de alta una línea:<br>
-                A través de la <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://www.movistar.com.ar/tienda" target="_blank">Tienda Movistar</a>
-                <br>
-                    Asistiendo a alguno de los <a class="agentbot-answer-hyperlink" data-style="hyperlink" href="http://ayuda.movistar.com.ar/pregunta/cuales-son-los-centros-de-experiencia-de-clientes-de-movistar.html">Centros de Experiencia Cliente</a>
-                </br>
-                También podés llamar al <strong>0800 2226116</strong> donde un asesor especializado te dará toda la información que necesitás.
-            </br>
+            {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Enviá un SMS al 611 para consultar por promociones y beneficios actuales. También hacelo por Mi Cuenta Web, por *611# + SEND o a través de nuestras redes sociales de Twitter, Facebook o Google+.",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"https://twitter.com/movistararg",
+                    "title":"Twitter"
+                    },
+                     {
+                    "type":"web_url",
+                    "url":"https://www.facebook.com/comunidadmovistarargentina",
+                    "title":"Facebook"
+                    },
+                     {
+                    "type":"web_url",
+                    "url":"https://plus.google.com/+MovistarArgentina/posts",
+                    "title":"Google +"
+                    }
+                ]
+              }
+            }
+            }
         </template>
     </category>
     <category>
@@ -153,6 +189,30 @@
         </template>
     </category>
     <category>
+        <pattern>FALLACELULAR</pattern>
+        <template>
+            {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Si tu celular movistar tiene una rotura o falla, acercate a un servicio técnico. Tené en cuenta que: 
+                    - Garantía de fábrica: solo cubre reparación de software no de hardware. Es decir, no cubre roturas sino fallas del programa.
+                    - Seguro Movistar: cubre 100% cualquier reparación.
+                    - Seguro Assurant: cubre 50% destrucción total (eso lo determina el servicio técnico) y 100% reparaciones (eso lo determina el servicio técnico).",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"http://movi.st/hc9",
+                    "title":"Servicio Tecnico"
+                    }
+                ]
+              }
+            }
+            }
+        </template>
+    </category>
+    <category>
         <pattern>CONOCERMIPLAN</pattern>
         <template>
             {
@@ -165,12 +225,12 @@
                         Ingresar en Mi Cuenta, en la opción de Mi plan y Servicios.",
                 "buttons":[
                      {
-                    "type":"Mi Movistar APP",
+                    "type":"web_url",
                     "url":"http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar",
-                    "title":"¿Dónde pago mi factura?"
+                    "title":"Mi Movistar APP"
                     },
                      {
-                    "type":"Mi Movistar APP",
+                    "type":"web_url",
                     "url":"http://movi.st/hbx",
                     "title":"Mi Cuenta"
                     }
@@ -183,32 +243,72 @@
     <category>
         <pattern>CONOCERMINICK</pattern>
         <template>
-            Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación. 
-            ¿Pudiste ingresar a Mi Cuenta?
-            - Sí pude ingresar
-            - No pude <a src="http://www.google.com.ar">link</a>
+        {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación.",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"https://idm.movistar.com.ar/",
+                    "title":"Mi Cuenta"
+                    }
+                ]
+              }
+            }
+        }
+        </template>
+    </category>
+    <category>
+        <pattern>SINSALDO</pattern>
+        <template>
+        {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":" Si no tenés saldo, es probable que ya hayas consumido lo que tu plan incluye. Podés consultar tu saldo a través de estos medios.",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"http://movi.st/hc1",
+                    "title":"Consultar Saldo"
+                    }
+                ]
+              }
+            }
+        }
         </template>
     </category>
     <category>
         <pattern>CARGARSALDO</pattern>
         <template>
-            
-            Acercate a un comercio habilitado y brinda los 10 dígitos de tu Movistar con el monto a recargar. Recibirás un mensaje de texto en tu Movistar que confirma la operación. También podés realizar una recarga de saldo ingresando en Mi Cuenta Web Movistar, seleccioná  Mis recargas y consumos, y luego Cargame Saldo. Escribí la línea en la querés cargar saldo y el importe. El crédito se cobrará en tu próxima factura. Para acceder, tenés que ingresar con tu usuario ó email y contraseña.  Si aún no tenés usuario podés registrarte desde acá.
-
-¿Tenés problemas para ingresar a Mi Cuenta Web Movistar?
-¿Cómo ingresar a Mi Cuenta Web Movistar?
-¿Cómo reseteo mi usuario?
-            
-            Conocé el paso a paso para registrarte en Mi Cuenta en la página que te muestro a continuación. 
-            ¿Pudiste ingresar a Mi Cuenta?
-            - Sí pude ingresar
-            - No pude <a src="http://www.google.com.ar">link</a>
+         {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":" Recargá tu celular por los medios que te voy a mostrar a continuación.
+                        También podés ingresar en Mi Cuenta Web Movistar, en los accesos directos seleccioná Cargame Saldo. El crédito se te cobra en la siguiente factura.
+                        Podés cargar saldo en cualquier Movistar, incluso los que no están a tu nombre.",
+                "buttons":[
+                     {
+                    "type":"web_url",
+                    "url":"http://online.movistar.com.ar/",
+                    "title":"Mi Cuenta Web Movistar"
+                    }
+                ]
+              }
+            }
+        }
         </template>
     </category>
     <category>
         <pattern>AYUDA</pattern>
         <template>
-            Por supuesto! Decime en qué te ayudo.
+            {"text": "Por supuesto! Decime en qué te ayudo."}
         </template>
     </category>
     <category>
