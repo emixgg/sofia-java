@@ -1,6 +1,6 @@
 const request = require('request'),
         config = require('../config/BotConfiguration'),
-        Promise = require("promise");
+        Promise = require("bluebird");
 
 function charlar(mensaje) {
     console.log("Entrando a charlar con el bot");
