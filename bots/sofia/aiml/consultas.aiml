@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>^ CONSULTAS ^</pattern>
+        <template>
+            <srai>CONSULTAS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ CONSULTAR ^</pattern>
+        <template>
+            <srai>CONSULTAS</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ DUDAS ^</pattern>
+        <template>
+            <srai>CONSULTAS</srai>
+        </template>
+    </category>
+
+</aiml>

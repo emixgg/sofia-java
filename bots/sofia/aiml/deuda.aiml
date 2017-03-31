@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    <category>
+        <pattern>^ QUIERO ^ PAGAR ^</pattern>
+        <template>
+            <srai>DEUDA</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ CUANTO DEBO ^</pattern>
+        <template>
+            <srai>DEUDA</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ DEUDA ^</pattern>
+        <template>
+            <srai>DEUDA</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>^ CUPON DE PAGO ^</pattern>
+        <template>
+            {
+            "attachment":{
+            "type":"template",
+            "payload":{
+            "template_type":"button",
+            "text":"Si querés ver cómo generar tu cupón de pago, hacé click acá",
+            "buttons":[
+            {
+            "type":"web_url",
+            "url":"http://ayuda.movistar.com.ar/pregunta/como-genero-el-cupon-de-pago.html",
+            "title":"Generando el Cupo de pago"
+            }]
+            }
+            }
+            }        
+        </template>
+    </category>
+
+    <category>
+        <pattern>^ APP ^ MOVISTAR</pattern>
+        <template>
+            {
+            "attachment":{
+            "type":"template",
+            "payload":{
+            "template_type":"button",
+            "text":"Si querés entrar a Mi Movistar, hacé click acá",
+            "buttons":[
+            {
+            "type":"web_url",
+            "url":"http://www.movistar.com.ar/tienda/aplicaciones/mi-movistar",
+            "title":"Desde la App Mi Movistar"
+            }]
+            }
+            }
+            }
+        </template>
+    </category>
+
+    <category>
+        <pattern>^ DETALLE ^ DEUDA ^</pattern>
+        <template>
+            {
+            "attachment":{
+            "type":"template",
+            "payload":{
+            "template_type":"button",
+            "text":"Si querés ver el detalle de tu deuda a Mi Movistar, hacé click acá",
+            "buttons":[
+            {
+            "type":"web_url",
+            "url":"http://ayuda.movistar.com.ar/pregunta/cuanto-debo.html",
+            "title":"Desde la Web"
+            }]
+            }
+            }
+            }
+        </template>
+    </category>
+
+</aiml>

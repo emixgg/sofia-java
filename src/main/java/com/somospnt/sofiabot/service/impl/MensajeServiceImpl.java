@@ -21,7 +21,7 @@ public class MensajeServiceImpl implements MensajeService {
 
         bot.brain.nodeStats();
 
-        log.debug("STATE=" + mensaje + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
+        log.info("STATE=" + mensaje + ":THAT=" + chatSession.thatHistory.get(0).get(0) + ":TOPIC=" + chatSession.predicates.get("topic"));
         String response = chatSession.multisentenceRespond(mensaje);
         while (response.contains("&lt;")) {
             response = response.replace("&lt;", "<");

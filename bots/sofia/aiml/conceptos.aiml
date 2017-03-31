@@ -19,7 +19,7 @@
         </template>
     </category>
     <category>
-        <pattern>DEBER</pattern>
+        <pattern>DEUDA</pattern>
         <template>
         {
             "attachment":{
